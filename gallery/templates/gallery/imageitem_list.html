@@ -1,0 +1,10 @@
+{% load thumbnail %}
+<a href="{% url image-create %}">Create</a><br>
+{% for item in object_list %}
+<a href="{% url image-detail pk=item.pk %}">
+    {% thumbnail item.image "100x100" crop="center" as im %}
+    <img src="{{ im.url }}" alt="{{ item.name}}" title="{{ item.name }}" border="0" width="im.width" height="im.height">
+    {% endthumbnail %}
+</a>
+<br>
+{% endfor %}
