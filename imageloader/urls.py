@@ -17,10 +17,10 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^images/create/$', ImageCreate.as_view(), name='image-create'),
-    url(r'^images/$', ImageList.as_view(), name='image-list'),
-    url(r'^images/(?P<pk>\d)/$', ImageDetail.as_view(), name='image-detail'),
-    url(r'^images/(?P<pk>\d)/delete/$', ImageDelete.as_view(), name='image-delete'),
+    url(r'^create/$', ImageCreate.as_view(), name='image-create'),
+    url(r'^$', ImageList.as_view(), name='image-list'),
+    url(r'^/(?P<pk>\d)/$', ImageDetail.as_view(), name='image-detail'),
+    url(r'^/(?P<pk>\d)/delete/$', ImageDelete.as_view(), name='image-delete'),
 )
 
 
