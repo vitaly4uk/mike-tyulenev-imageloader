@@ -1,4 +1,7 @@
 venv
+error
+stats
+media
 */media
 *.un~
 *.pyc
