@@ -2,7 +2,7 @@ from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from gallery.models import ImageItem
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse_lazy
 
 
 class ImageCreate(CreateView):
@@ -15,7 +15,7 @@ class ImageDetail(DetailView):
 
 class ImageDelete(DeleteView):
     model = ImageItem
-    success_url = '/images/'
+    success_url = reverse_lazy('image-list')
 
 
 class ImageList(ListView):

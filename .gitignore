@@ -1,4 +1,5 @@
 venv
+*/media
 *.un~
 *.pyc
 local_settings.py

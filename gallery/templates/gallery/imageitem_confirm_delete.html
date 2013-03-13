@@ -1,4 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
 <form action="." method="post">{% csrf_token %}
-    Please, confirm image delete.
-    <input type="submit" value="Submit" />
+    Do you really want to delete this image?
+    <br>
+    <a href="{% url image-list %}">No</a>
+    <input type="submit" value="Yes" />
 </form>
+{% endblock %}

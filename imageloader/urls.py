@@ -17,8 +17,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^create/$', ImageCreate.as_view(), name='image-create'),
     url(r'^$', ImageList.as_view(), name='image-list'),
+    url(r'^create/$', ImageCreate.as_view(), name='image-create'),
     url(r'^(?P<pk>\d)/$', ImageDetail.as_view(), name='image-detail'),
     url(r'^(?P<pk>\d)/delete/$', ImageDelete.as_view(), name='image-delete'),
 )
@@ -30,5 +30,8 @@ if settings.DEBUG:
     urlpatterns += patterns('',
             url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
                 'document_root': settings.MEDIA_ROOT,
+                }),
+            url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+                'document_root': settings.STATIC_ROOT,
                 }),
             )
